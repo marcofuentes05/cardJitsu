@@ -1,37 +1,29 @@
 package Clases;
-
 public class Carta {
     private int numero;
     private String color;
     private String elemento;
-
+    public Carta (){}
     public Carta(int num, String color, String elemento){
         this.numero=num;
         this. color=color;
         this.elemento=elemento;
-
     }
-
     public int getNumero() {
         return numero;
     }
-
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
     public String getColor() {
         return color;
     }
-
     public void setColor(String color) {
         this.color = color;
     }
-
     public String getElemento() {
         return elemento;
     }
-
     public void setElemento(String elemento) {
         this.elemento = elemento;
     }

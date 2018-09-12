@@ -1,12 +1,10 @@
 package Clases;
-
 import java.util.ArrayList;
-
 public class Deck {
     private ArrayList<Carta> cartas;
     private ArrayList<Carta> cartasVisibles;
-
     public Deck (){
+        this.cartas = new ArrayList<>();
         cartas.add(new Carta(5,"Amarillo","Agua"));
         cartas.add(new Carta(6,"Verde","Fuego"));
         cartas.add(new Carta(3,"Azul","Nieve"));
@@ -14,20 +12,15 @@ public class Deck {
         cartas.add(new Carta(7,"Rojo","Agua"));
         cartasVisibles=cartas;
         }
-
-
     public ArrayList<Carta> getCartas() {
         return cartas;
     }
-
     public void setCartas(ArrayList<Carta> cartas) {
         this.cartas = cartas;
     }
-
     public ArrayList<Carta> getCartasVisibles() {
         return cartasVisibles;
     }
-
     public void agregarCarta(Carta c){
         cartas.add(c);
     }
@@ -47,7 +40,6 @@ public class Deck {
             }
         }
     }
-
     public void setCartasVisibles(ArrayList<Carta> cartasVisibles) {
         this.cartasVisibles = cartasVisibles;
     }

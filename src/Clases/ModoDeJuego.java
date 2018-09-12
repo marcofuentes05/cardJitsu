@@ -1,12 +1,9 @@
 package Clases;
-
 public class ModoDeJuego {
     private String nombre;
-
     public ModoDeJuego(String m){
         this.nombre = m;
     }
-
     public String getNombre() {
         return nombre;
     }

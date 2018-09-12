@@ -5,6 +5,12 @@ public class CartaEspecial extends Carta {
     private String color;
     private String elemento;
 
+    public CartaEspecial(int num, String color, String elemento){
+        this.numero=num;
+        this. color=color;
+        this.elemento=elemento;
+    }
+
     @Override
     public int getNumero() {
         return numero;
