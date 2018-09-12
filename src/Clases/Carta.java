@@ -5,6 +5,13 @@ public class Carta {
     private String color;
     private String elemento;
 
+    public Carta(int num, String color, String elemento){
+        this.numero=num;
+        this. color=color;
+        this.elemento=elemento;
+
+    }
+
     public int getNumero() {
         return numero;
     }

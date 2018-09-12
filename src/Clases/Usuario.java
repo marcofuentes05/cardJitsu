@@ -7,6 +7,24 @@ public class Usuario {
     private Deck deck;
     private Perfil perfil;
 
+    public Usuario(String user, String password, String correo){
+        this.usuario= user;
+        this.contrasena=password;
+        this.correo=correo;
+        this.deck = new Deck();
+    }
+
+    @Override
+    public String toString(){
+        String s="";
+        for (int i = 0;i < deck.getCartasVisibles().size();i++){
+            s = "Estas son tus cartas: \n";
+            s = "Carta No. "+i+" Valor: "+deck.getCartasVisibles().get(i).getNumero()+", Color: "+deck.getCartasVisibles().get(i).getColor()+", Elemento: "+deck.getCartasVisibles().get(i).getElemento()+"\n";
+        }
+        return s;
+    }
+
+
     public String getUsuario() {
         return usuario;
     }

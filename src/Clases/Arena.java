@@ -6,6 +6,11 @@ public class Arena {
     private ArrayList<Usuario> usuarios;
     private ModoDeJuego modoDeJuego;
 
+    public Arena (ArrayList <Usuario> jugadores, ModoDeJuego m){
+        this.usuarios = jugadores;
+        this.modoDeJuego = m;
+    }
+
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
