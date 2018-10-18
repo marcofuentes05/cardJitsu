@@ -9,16 +9,16 @@ public class Estadistica {
         return victorias;
     }
 
-    public void setVictorias(int victorias) {
-        this.victorias = victorias;
+    public void sumarVictoria() {
+        this.victorias = victorias+1;
     }
 
     public int getDerrotas() {
         return derrotas;
     }
 
-    public void setDerrotas(int derrotas) {
-        this.derrotas = derrotas;
+    public void sumarDerrota() {
+        this.derrotas = derrotas+1;
     }
 
     public double getXp() {

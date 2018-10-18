@@ -12,11 +12,17 @@ public class Arena {
     public ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }
+    public void anadirUsuario(Usuario jugador){
+        usuarios.add(jugador);
+    }
     public void setUsuarios(ArrayList<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
     public ModoDeJuego getModoDeJuego() {
         return modoDeJuego;
+    }
+    public void cambiarModo(ModoDeJuego m){
+        this.setModoDeJuego(m);
     }
     public void setModoDeJuego(ModoDeJuego modoDeJuego) {
         this.modoDeJuego = modoDeJuego;

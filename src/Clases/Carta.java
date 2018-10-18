@@ -1,11 +1,12 @@
 package Clases;
+
 public class Carta {
     private int numero;
     private String color;
     private String elemento;
     public Carta (){}
-    public Carta(int num, String color, String elemento){
-        this.numero=num;
+    public Carta(Integer num, String color, String elemento){
+        this.numero=(int)(Math.random()*10+1);
         this. color=color;
         this.elemento=elemento;
     }

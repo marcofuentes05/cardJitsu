@@ -1,12 +1,15 @@
 package Clases;
 
+
+import java.util.Random;
+
 public class CartaEspecial extends Carta {
     private int numero;
     private String color;
     private String elemento;
 
     public CartaEspecial(int num, String color, String elemento){
-        this.numero=num;
+        this.numero= num;
         this. color=color;
         this.elemento=elemento;
     }

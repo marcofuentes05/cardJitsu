@@ -8,6 +8,10 @@ public class Perfil {
         return estadisticas;
     }
 
+    public void actualizarEstadisticas(){
+
+    }
+
     public void setEstadisticas(Estadistica estadisticas) {
         this.estadisticas = estadisticas;
     }
