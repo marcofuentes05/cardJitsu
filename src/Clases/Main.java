@@ -33,6 +33,7 @@ public class Main {
                 }
             }
         }
+
         ModoDeJuego modo = new ModoDeJuego("modo1");
         Arena arena = new Arena(jugadores, modo);
         if (jugadores.size()!=2){
@@ -43,7 +44,7 @@ public class Main {
             while (sigue){
                 ArrayList<Carta> cartasEnJuego = new ArrayList<>();
                 for (int a  = 0; a<2;a++){
-                    System.out.println("Jugaddor "+(a+1));
+                    System.out.println("Jugador "+(a+1));
                     System.out.println(jugadores.get(a).toString());
                     System.out.print("Ingrese el numero de su elección de carta: ");
                     try{
@@ -53,7 +54,13 @@ public class Main {
                 }
                 Boolean juez = arena.getModoDeJuego().juez(cartasEnJuego.get(0),cartasEnJuego.get(1));
                 System.out.println("El ganador es: "+ juez.toString());
-                sigue = false;
+                if (juez){
+                    jugadores.get(0).cartasGanadasPartida.add(cartasEnJuego.get(0));
+                }else{
+                    jugadores.get(1).cartasGanadasPartida.add(cartasEnJuego.get(1));
+                }
+
+                //sigue = false;
             }
         }
     }

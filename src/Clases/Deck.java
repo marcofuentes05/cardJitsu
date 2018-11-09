@@ -34,9 +34,7 @@ public class Deck {
                         int numAleatorio=(int)Math.floor(Math.random()*((-1)-(cartas.size()+1))+(cartas.size()));
                         cartasVisibles.add(cartas.get(numAleatorio));
                     }
-
                 }
-
             }
         }
     }

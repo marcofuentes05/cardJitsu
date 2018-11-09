@@ -1,4 +1,7 @@
 package Clases;
+
+import java.util.ArrayList;
+
 public class ModoDeJuego {
     private String nombre;
     public ModoDeJuego(String m){
@@ -40,6 +43,66 @@ public class ModoDeJuego {
             }
         }else{
             //TODO definir reglas para el segundo modo de juego
+        }
+
+        return resultado;
+    }
+    public boolean sigue (ArrayList<Carta> lista){
+        Boolean seguir = true;
+        if (lista.size()>=3){
+            int rojo = 0;
+            int azul = 0;
+            int amarillo = 0;
+            int morado = 0;
+            int naranja = 0;
+            int verde = 0;
+            int agua = 0;
+            int fuego = 0;
+            int nieve = 0;
+            for (int i = 0;i < lista.size();i++){
+
+                switch (lista.get(i).getElemento()){
+                    case "Agua":
+                        agua = agua + 1;
+                        break;
+                    case "Fuego":
+                        fuego = fuego + 1;
+                        break;
+                    case "Nieve":
+                        nieve = nieve + 1;
+                }
+                switch(lista.get(i).getColor()){
+                    case "Amarillo":
+                        amarillo = amarillo + 1;
+                        break;
+                    case "Rojo":
+                        rojo = rojo + 1;
+                        break;
+                    case "Azul":
+                        azul = azul + 1;
+                        break;
+                    case "Morado":
+                        morado = morado + 1;
+                        break;
+                    case "Naranja":
+                        naranja = naranja + 1;
+                        break;
+                    case "Verde":
+                        verde = verde + 1;
+                        break;
+                }
+            }
+        }else{
+            seguir = true;
+        }
+        return seguir;
+    }
+    public String toString(Boolean a){
+        String resultado = "";
+        if (a == true){
+            resultado = "Jugador 1";
+        }else{
+            resultado = "Jugador 2";
         }
         return resultado;
     }

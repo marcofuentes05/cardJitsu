@@ -1,15 +1,20 @@
 package Clases;
+
+import java.util.ArrayList;
+
 public class Usuario {
     private String usuario;
     private String contrasena;
     private String correo;
     private Deck deck;
     private Perfil perfil;
+    public ArrayList<Carta> cartasGanadasPartida;
     public Usuario(String user, String password, String correo){
         this.usuario= user;
         this.contrasena=password;
         this.correo=correo;
         this.deck = new Deck();
+        this.cartasGanadasPartida = new ArrayList<>();
     }
     @Override
     public String toString(){
