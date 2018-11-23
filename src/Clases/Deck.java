@@ -24,6 +24,7 @@ public class Deck {
     public void agregarCarta(Carta c){
         cartas.add(c);
     }
+
     public void usarCarta(Carta c){
         for (int i = 0; i <cartasVisibles.size();i++){
             if (cartasVisibles.get(i).getNumero()==(c.getNumero())){

@@ -50,17 +50,29 @@ public class Main {
                     try{
                         int respuesta = input2.nextInt()-1;
                         cartasEnJuego.add(jugadores.get(a).getDeck().getCartasVisibles().get(respuesta));
+                        jugadores.get(a).getDeck().usarCarta(cartasEnJuego.get(a));
                     }catch(Exception e){}
                 }
-                Boolean juez = arena.getModoDeJuego().juez(cartasEnJuego.get(0),cartasEnJuego.get(1));
+                Boolean juez = arena.getModoDeJuego().encuentro(cartasEnJuego.get(0),cartasEnJuego.get(1));
                 System.out.println("El ganador es: "+ juez.toString());
                 if (juez){
                     jugadores.get(0).cartasGanadasPartida.add(cartasEnJuego.get(0));
+                    jugadores.get(0).add(cartasEnJuego.get(0));
                 }else{
                     jugadores.get(1).cartasGanadasPartida.add(cartasEnJuego.get(1));
+                    jugadores.get(1).add(cartasEnJuego.get(1));
                 }
 
-                //sigue = false;
+                if (arena.getModoDeJuego().juez(jugadores.get(0),jugadores.get(1)) == null){
+                    sigue = true;
+                }else {
+                    if (arena.getModoDeJuego().juez(jugadores.get(0),jugadores.get(1)) == true){
+                        System.out.println("Jugador 1 ha ganado");
+                    }else{
+                        System.out.println("Jugador 2 ha ganado");
+                    }
+                    sigue = false;
+                }
             }
         }
     }
