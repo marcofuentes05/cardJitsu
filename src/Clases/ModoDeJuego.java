@@ -4,11 +4,18 @@ import java.util.ArrayList;
 
 public class ModoDeJuego {
     private String nombre;
+    private int contador = 0;
     public ModoDeJuego(String m){
         this.nombre = m;
     }
     public String getNombre() {
         return nombre;
+    }
+    public void pasoRonda(){
+        contador = contador + 1;
+    }
+    public int getContador (){
+        return contador;
     }
 
     //El metodo encuentro determinará el ganador. Si retorna TRUE, gana el jugador 1, de lo contrario, gana jugador 2. Retorna null si es empate
@@ -100,7 +107,6 @@ public class ModoDeJuego {
                             }
                         }
                     }
-
                 }
             }
         }
@@ -118,7 +124,8 @@ public class ModoDeJuego {
                 resultado = false;
             }
         }else if (this.nombre.equals("modo2")){
-            if (j1.getDeck().getCartas().size()==0){
+
+            if (contador==5){
                 int suma1 = j1.sumaFilas();
                 int suma2 = j2.sumaFilas();
                 if (suma1 < suma2){
@@ -128,6 +135,8 @@ public class ModoDeJuego {
                 }else if (suma1 == suma2){
                     resultado = null;
                 }
+            }else{
+                resultado = null;
             }
         }
         return resultado;

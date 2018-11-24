@@ -4,7 +4,7 @@ public class Arena {
     private ArrayList<Usuario> usuarios;
     private ModoDeJuego modoDeJuego;
     //TODO Hay que pensar como llevar la cuenta de las cartas que van ganando los jugadores
-    //TODO es decir, como sabemos cuando alguien gane definitivamente la partida
+    //TODO es decir, como sabemos cuando alguien gane definitivamente la partida - DONE
     public Arena (ArrayList <Usuario> jugadores, ModoDeJuego m){
         this.usuarios = jugadores;
         this.modoDeJuego = m;

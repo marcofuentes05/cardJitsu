@@ -32,7 +32,8 @@ public class Deck {
                     if(cartasVisibles.get(i).getElemento().equals(c.getElemento())){
                         //Cuando se usa una carta, esta sale de las cartas visibles y otra la suplanta
                         cartasVisibles.remove(i);
-                        int numAleatorio=(int)Math.floor(Math.random()*((-1)-(cartas.size()+1))+(cartas.size()));
+                        int numAleatorio = (int) (Math.random() * (cartas.size()-1)) ;
+                        //int numAleatorio=(int)Math.floor(Math.random()*((-1)-(cartas.size()+1))+(cartas.size()));
                         cartasVisibles.add(cartas.get(numAleatorio));
                     }
                 }

@@ -34,12 +34,33 @@ public class Main {
             }
         }
 
-        ModoDeJuego modo = new ModoDeJuego("modo1");
-        Arena arena = new Arena(jugadores, modo);
+
         if (jugadores.size()!=2){
             System.out.println("Hay datos incorrectos!");
         }else{
             System.out.println("Bienvenidos ambos");
+            Scanner sc = new Scanner (System.in);
+            Boolean hayModo = true;
+            String modoDeJuego = "";
+            while (hayModo){
+                System.out.println("¿Qué modo de juego quieren jugar? 1/2");
+                String m = sc.nextLine().toString();
+
+                if (m.equals("1")){
+                    modoDeJuego = "modo1";
+                    hayModo = false;
+                }else if (m.equals("2")){
+                    modoDeJuego = "modo2";
+                    hayModo = false;
+                }else{
+                    System.out.println("Ese valor es incorrecto...");
+                }
+            }
+
+
+            ModoDeJuego modo = new ModoDeJuego(modoDeJuego);
+            Arena arena = new Arena(jugadores, modo);
+
             Boolean sigue = true;
             while (sigue){
                 ArrayList<Carta> cartasEnJuego = new ArrayList<>();
@@ -51,10 +72,15 @@ public class Main {
                         int respuesta = input2.nextInt()-1;
                         cartasEnJuego.add(jugadores.get(a).getDeck().getCartasVisibles().get(respuesta));
                         jugadores.get(a).getDeck().usarCarta(cartasEnJuego.get(a));
-                    }catch(Exception e){}
+                    }catch(Exception e){
+                        System.out.println("Ese no es u dato valido...");
+                    }
                 }
                 Boolean juez = arena.getModoDeJuego().encuentro(cartasEnJuego.get(0),cartasEnJuego.get(1));
-                System.out.println("El ganador es: "+ juez.toString());
+                System.out.println("El ganador es: "+ juez);
+
+
+                //En esta parte se agregan las cartas ganadas por los jugadores a sus respectivas matrices con el método add()
                 if (juez){
                     jugadores.get(0).cartasGanadasPartida.add(cartasEnJuego.get(0));
                     jugadores.get(0).add(cartasEnJuego.get(0));
@@ -63,6 +89,7 @@ public class Main {
                     jugadores.get(1).add(cartasEnJuego.get(1));
                 }
 
+                //Aqui se verifica si ya hay un ganador
                 if (arena.getModoDeJuego().juez(jugadores.get(0),jugadores.get(1)) == null){
                     sigue = true;
                 }else {
@@ -73,7 +100,9 @@ public class Main {
                     }
                     sigue = false;
                 }
+                modo.pasoRonda();
             }
         }
     }
+
 }
