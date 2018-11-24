@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Deck {
     private ArrayList<Carta> cartas;
     private ArrayList<Carta> cartasVisibles;
+    //Este constructor es solo de prueba
     public Deck (){
         this.cartas = new ArrayList<>();
         cartas.add(new Carta(5,"Amarillo","Agua"));
@@ -11,6 +12,12 @@ public class Deck {
         cartas.add(new Carta(9,"Azul", "Fuego"));
         cartas.add(new Carta(7,"Rojo","Agua"));
         cartasVisibles=cartas;
+        }
+        public Deck(ArrayList<Carta> c){
+            this.cartas = c;
+            for (int i = 0;i< c.size() || i<5 ; i++){
+                cartasVisibles.set(i,cartas.get(i));
+            }
         }
     public ArrayList<Carta> getCartas() {
         return cartas;

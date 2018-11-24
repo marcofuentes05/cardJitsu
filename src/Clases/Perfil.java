@@ -1,26 +1,40 @@
 package Clases;
 
+import java.util.ArrayList;
+
 public class Perfil {
-    private Estadistica estadisticas;
-    private Recompensa recompensas;
+    private int victorias;
+    private int derrotas;
+    private int xp;
+    private ArrayList<Cinturon> cinturones;
 
-    public Estadistica getEstadisticas() {
-        return estadisticas;
+
+    public int getVictorias() {
+        return victorias;
+    }
+    public void partidaGanada(){
+        victorias = victorias + 1;
     }
 
-    public void actualizarEstadisticas(){
-
+    public int getDerrotas() {
+        return derrotas;
+    }
+    public void partidaPerdida(){
+        derrotas = derrotas + 1;
     }
 
-    public void setEstadisticas(Estadistica estadisticas) {
-        this.estadisticas = estadisticas;
+    public int getXp() {
+        return xp;
+    }
+    public void sumarXp(int a){
+        xp = xp + a;
     }
 
-    public Recompensa getRecompensas() {
-        return recompensas;
+    public Cinturon getCinturon() {
+        return cinturones.get(cinturones.size()-1);
+    }
+    public void agregarCinturon(Cinturon c){
+        cinturones.add(c);
     }
 
-    public void setRecompensas(Recompensa recompensas) {
-        this.recompensas = recompensas;
-    }
 }

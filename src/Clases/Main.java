@@ -1,8 +1,28 @@
 package Clases;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
 public class Main {
     public static void main (String args[]){
+        //Primero se hace la conexion con la base de datos para que se puedan obtener los datos.
+        Connection c = null;
+        Statement stmt = null;
+
+        try{
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","");
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully");
+            stmt = c.createStatement();
+            //String query = "SELECT USUARIO, CONTRASENA FROM USUARIOS WHERE "
+        }catch (Exception e){
+
+        }
+
         //Se define una lista que contiene todos los jugadores de la base de datos
         //Y otra que unicamente contiene los jugadres que jugaran esta partida
         ArrayList<Usuario> usuarios = new ArrayList();
@@ -18,22 +38,24 @@ public class Main {
             Boolean datos = false;
             while (datos==false){
                 System.out.println("Ingrese su usuario "+(a+1)+":");
-                String usuario = input.nextLine().toString();
-                System.out.println("Intrese su contraseña "+(a+1)+"");
-                String contrasena = input1.nextLine().toString();
-                for (int i = 0; i<usuarios.size();i++){
-                    if (usuarios.get(i).getUsuario().equals(usuario)){
-                        if (usuarios.get(i).getContrasena().equals(contrasena)){
-                            datos = true;
-                            jugadores.add(usuarios.get(i));
-                        }else{
-                            System.out.println("Hay datos incorrectos");
-                        }
+                String usuario = input.nextLine();
+                System.out.println("Intrese su contraseña "+(a+1)+": ");
+                String contrasena = input1.nextLine();
+                String query = "SELECT USUARIO, CONTRASENA FROM USUARIOS WHERE Usuario = '"+usuario+"' AND  Contrasena = '"+contrasena+"'";
+                try{
+                    ResultSet rs = stmt.executeQuery(query);
+                    if (rs.next()){
+                        datos = true;
+                        //TODO hay que interpretar los datos de la BD en objetos usuario para la implementacion del programa.
+                        jugadores.add(usuarios.get(1));
+                    }else{
+                        System.out.println("Hay datos incorrectos");
                     }
+                }catch(Exception E){
+
                 }
             }
         }
-
 
         if (jugadores.size()!=2){
             System.out.println("Hay datos incorrectos!");
@@ -57,7 +79,7 @@ public class Main {
                 }
             }
 
-
+            //Aqui comienza la lógica del juego
             ModoDeJuego modo = new ModoDeJuego(modoDeJuego);
             Arena arena = new Arena(jugadores, modo);
 
