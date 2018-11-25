@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b37c895-7443-4a21-832c-4ab86196ce1c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cardJitsu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cardJitsu.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Carta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Cinturon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Cinturon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Perfil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Perfil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Recompensa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Recompensa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clases/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clases/Usuario.java" afterDir="false" />
-    </list>
+    <list default="true" id="2b37c895-7443-4a21-832c-4ab86196ce1c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +13,7 @@
     <session id="1958018840">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.111" value="1" />
           <entry key="project.open.time.4" value="1" />
@@ -61,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Clases/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="51" column="68" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="68" />
+            <state relative-caret-position="279">
+              <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -464,8 +454,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Clases/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="51" column="68" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="68" />
+        <state relative-caret-position="279">
+          <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
